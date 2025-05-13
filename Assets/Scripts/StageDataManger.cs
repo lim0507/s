@@ -35,6 +35,10 @@ public static class StageResultSaver
         string json = JsonUtility.ToJson(list, true);
         File.WriteAllText(filePath, json);
     }
+    public static StageResultList LoadRank()
+    {
+        return LoadInternal();
+    }
     private static StageResultList LoadInternal()
     {
         if (!File.Exists(filePath))
