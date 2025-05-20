@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGiant = false;
 
-    float score;
+    public float score;
 
     private void Awake()
     {
@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Item"))
         {
             isGiant = true;
+            score += collision.GetComponent<ItemObject>().GetPoint();
             Destroy(collision.gameObject);
         }
 
